@@ -28,7 +28,8 @@ The system emphasizes a data-centric approach:
 
 ## Tech Stack
 
-- Language: Python  
+- Frontend : Next js
+- Backend: FAST API 
 - LLM Integration: Groq API  
 - Vector Database: ChromaDB  
 - Data Format: JSON  
