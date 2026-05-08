@@ -57,9 +57,6 @@ def _chunk_text(text: str, chunk_size: int, overlap: int) -> list[str]:
         start += step
     return chunks
 
-
-# ── Singleton accessors ────────────────────────────────────────────────────────
-
 @lru_cache(maxsize=1)
 def _load_embedder(model_name: str):
     from sentence_transformers import SentenceTransformer
@@ -98,7 +95,6 @@ def _get_or_build_collection(settings: Settings):
         try:
             client.delete_collection(settings.chroma_collection)
         except Exception:
-            # Collection may not exist yet; safe to ignore.
             pass
         collection = client.create_collection(
             name=settings.chroma_collection,
@@ -176,8 +172,6 @@ def _populate_index(collection: Any, settings: Settings) -> None:
     logger.info("Indexed %d summary-augmented chunks.", len(ids))
 
 
-# ── Public API ─────────────────────────────────────────────────────────────────
-
 class VectorStoreService:
     """Stateful wrapper around ChromaDB + embedder — use as a FastAPI dependency."""
 
@@ -186,7 +180,6 @@ class VectorStoreService:
         self._embedder = None
         self._collection = None
 
-    # Lazy initialisation so the HTTP server starts instantly.
     def _ensure_ready(self) -> None:
         if self._collection is None:
             self._embedder = _load_embedder(self._settings.embedding_model)

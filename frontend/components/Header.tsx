@@ -22,7 +22,6 @@ export default function Header() {
     }}>
       <div className="max-w-6xl mx-auto px-4 py-0">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-full flex items-center justify-center"
               style={{ background: 'linear-gradient(135deg, #b8860b, #d9a520)' }}>
@@ -37,7 +36,6 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Nav */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map(({ href, label, icon: Icon }) => (
               <Link
@@ -57,7 +55,6 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Mobile nav indicator */}
           <div className="md:hidden flex gap-3">
             {navItems.map(({ href, icon: Icon }) => (
               <Link key={href} href={href}

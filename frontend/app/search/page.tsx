@@ -41,7 +41,6 @@ export default function SearchPage() {
     <div style={{ minHeight: '100vh', background: '#fdf9ed' }}>
       <Header />
       <div className="max-w-3xl mx-auto px-4 py-8">
-        {/* Title */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Georgia, serif', color: '#102a43' }}>
             Search PPC Laws
@@ -51,7 +50,6 @@ export default function SearchPage() {
           </p>
         </div>
 
-        {/* Search bar */}
         <div className="relative mb-4">
           <div className="absolute left-4 top-1/2 -translate-y-1/2">
             <Search size={18} style={{ color: '#829ab1' }} />
@@ -85,7 +83,6 @@ export default function SearchPage() {
           </button>
         </div>
 
-        {/* Suggestions */}
         {!searched && (
           <div>
             <p className="text-xs mb-2" style={{ color: '#829ab1' }}>Quick searches:</p>
@@ -112,7 +109,6 @@ export default function SearchPage() {
           </div>
         )}
 
-        {/* Results */}
         {loading && (
           <div className="text-center py-12" style={{ color: '#829ab1' }}>
             <Loader size={28} className="animate-spin mx-auto mb-3" style={{ color: '#b8860b' }} />

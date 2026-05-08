@@ -69,7 +69,7 @@ export default function AnalyzePage() {
       <Header />
 
       <div className="max-w-3xl mx-auto px-4 py-8">
-        {/* Page title */}
+        
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-full mb-4"
             style={{ background: 'linear-gradient(135deg, #b8860b, #d9a520)', boxShadow: '0 4px 20px rgba(184,134,11,0.3)' }}>
@@ -83,14 +83,12 @@ export default function AnalyzePage() {
           </p>
         </div>
 
-        {/* Input card */}
         <div className="rounded-2xl overflow-hidden mb-6"
           style={{
             background: '#ffffff',
             border: '1.5px solid #d9e2ec',
             boxShadow: '0 4px 24px rgba(16,42,67,0.08)',
           }}>
-          {/* Card header */}
           <div className="px-5 py-4"
             style={{ borderBottom: '1px solid #f0f4f8', background: 'linear-gradient(135deg, #f8fafc, #f0f4f8)' }}>
             <h2 className="font-semibold text-sm" style={{ color: '#334e68', fontFamily: 'Georgia, serif' }}>
@@ -102,7 +100,6 @@ export default function AnalyzePage() {
           </div>
 
           <div className="p-5 space-y-4">
-            {/* Text area */}
             <div>
               <textarea
                 value={query}
@@ -127,21 +124,18 @@ export default function AnalyzePage() {
               </div>
             </div>
 
-            {/* Divider */}
             <div className="flex items-center gap-3">
               <div className="flex-1 h-px" style={{ background: '#e8f0f8' }} />
               <span className="text-xs" style={{ color: '#829ab1' }}>OR attach document</span>
               <div className="flex-1 h-px" style={{ background: '#e8f0f8' }} />
             </div>
 
-            {/* File upload */}
             <FileUpload
               onUpload={setUploadedDoc}
               onClear={() => setUploadedDoc(null)}
               uploaded={uploadedDoc}
             />
 
-            {/* Error */}
             {error && (
               <div className="flex items-center gap-2 text-sm px-3 py-2 rounded-lg"
                 style={{ background: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626' }}>
@@ -150,7 +144,6 @@ export default function AnalyzePage() {
               </div>
             )}
 
-            {/* Actions */}
             <div className="flex items-center gap-3">
               <button
                 onClick={handleAnalyze}
@@ -178,7 +171,6 @@ export default function AnalyzePage() {
           </div>
         </div>
 
-        {/* Example queries */}
         {!result && !loading && (
           <div className="mb-6">
             <div className="flex items-center gap-2 mb-3">
@@ -206,11 +198,9 @@ export default function AnalyzePage() {
           </div>
         )}
 
-        {/* Results */}
         {loading && <AnalysisSkeleton />}
         {result && !loading && <AnalysisDisplay result={result} />}
 
-        {/* Disclaimer footer */}
         <div className="mt-8 p-4 rounded-xl text-center text-xs"
           style={{ background: 'rgb(145, 52, 15)', border: '1px solidrgb(145, 52, 15)', color: 'white' }}>
 <strong>Disclaimer:</strong> LawBot provides educational legal information only. Always consult a qualified

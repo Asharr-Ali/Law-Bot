@@ -30,7 +30,6 @@ def analyze_case(
     if not req.query and not req.extracted_doc_text:
         raise HTTPException(status_code=400, detail="Provide a query or document text.")
 
-    # ── 1. Search ──────────────────────────────────────────────────────────────
     search_input = req.query
     if req.extracted_doc_text:
         search_input = f"{req.query} {req.extracted_doc_text[:1_000]}"
@@ -41,14 +40,12 @@ def analyze_case(
         logger.exception("Semantic search failed")
         raise HTTPException(status_code=500, detail=f"Search failed: {exc}") from exc
 
-    # ── 2. Build prompt ────────────────────────────────────────────────────────
     full_query = req.query
     if req.extracted_doc_text:
         full_query += f"\n\n[Extracted from uploaded document]:\n{req.extracted_doc_text[:2_000]}"
 
     prompt = build_prompt(full_query, sections)
 
-    # ── 3. Generate ────────────────────────────────────────────────────────────
     analysis = llm.generate(prompt)
 
     return AnalyzeResponse(

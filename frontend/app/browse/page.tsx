@@ -59,7 +59,6 @@ function BrowseContent() {
     <div style={{ minHeight: '100vh', background: '#fdf9ed' }}>
       <Header />
       <div className="max-w-4xl mx-auto px-4 py-8">
-        {/* Page header */}
         <div className="flex items-center justify-between mb-6">
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -73,7 +72,6 @@ function BrowseContent() {
             </p>
           </div>
 
-          {/* Category filter */}
           <div className="relative">
             <button
               onClick={() => setShowCatDropdown(!showCatDropdown)}
@@ -118,7 +116,6 @@ function BrowseContent() {
           </div>
         </div>
 
-        {/* Category chips */}
         <div className="flex flex-wrap gap-2 mb-6">
           {['All', 'Offences Against Person', 'Property Offences', 'Document & Property Fraud',
             'False Evidence & Public Justice', 'Punishments', 'General Exceptions'].map(cat => (
@@ -135,7 +132,6 @@ function BrowseContent() {
           ))}
         </div>
 
-        {/* Sections list */}
         {loading ? (
           <div className="space-y-3">
             {[1,2,3,4,5].map(i => (

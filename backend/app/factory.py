@@ -25,7 +25,6 @@ def create_app() -> FastAPI:
         redoc_url="/redoc",
     )
 
-    # ── Middleware ─────────────────────────────────────────────────────────────
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.allowed_origins,
@@ -34,10 +33,8 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
 
-    # ── Routes ─────────────────────────────────────────────────────────────────
     app.include_router(api_router)
 
-    # ── Startup: pre-warm models in a background thread ───────────────────────
     @app.on_event("startup")
     async def _startup() -> None:
         logger.info("LawBot starting — pre-warming models in background…")

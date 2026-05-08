@@ -18,7 +18,7 @@ class DocumentService:
         Write *file_bytes* to a temp file, extract all text via PyMuPDF,
         then clean up.  Raises RuntimeError if extraction yields nothing.
         """
-        import fitz  # PyMuPDF — imported lazily so startup stays fast
+        import fitz  
 
         with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
             tmp.write(file_bytes)

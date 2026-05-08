@@ -13,8 +13,6 @@ from app.core.config import Settings
 
 logger = logging.getLogger(__name__)
 
-# ── Prompt builder ─────────────────────────────────────────────────────────────
-
 SYSTEM_PROMPT = (
     "You are LawBot, an expert Pakistani legal assistant specialising in the "
     "Pakistan Penal Code. Always cite specific PPC sections in English; "
@@ -65,9 +63,6 @@ def build_prompt(user_query: str, retrieved_sections: list[dict]) -> str:
         f"Respond using this structure:\n{_RESPONSE_TEMPLATE}"
     )
 
-
-# ── Provider implementations ───────────────────────────────────────────────────
-
 def _call_groq(prompt: str, settings: Settings) -> str:
     logger.info("Calling Groq API (model=%s)…", settings.groq_model)
     headers = {
@@ -117,8 +112,6 @@ def _rule_based_fallback() -> str:
     )
 
 
-# ── Public façade ──────────────────────────────────────────────────────────────
-
 class LLMService:
     """
     Chains Groq → Ollama → rule-based fallback.
@@ -130,18 +123,15 @@ class LLMService:
 
     def generate(self, prompt: str) -> str:
         """Return LLM-generated analysis for *prompt*."""
-        # 1. Groq (requires API key)
         if self._settings.groq_api_key:
             try:
                 return _call_groq(prompt, self._settings)
             except Exception as exc:
                 logger.warning("Groq call failed (%s); trying Ollama…", exc)
 
-        # 2. Ollama (local)
         try:
             return _call_ollama(prompt, self._settings)
         except Exception as exc:
             logger.warning("Ollama call failed (%s); using rule-based fallback.", exc)
 
-        # 3. Rule-based
         return _rule_based_fallback()

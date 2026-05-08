@@ -3,10 +3,8 @@
 export default function AnalysisSkeleton() {
   return (
     <div className="space-y-6 animate-fade-in">
-      {/* Main card skeleton */}
       <div className="rounded-2xl overflow-hidden"
         style={{ border: '2px solid #b8860b', boxShadow: '0 8px 32px rgba(184,134,11,0.1)' }}>
-        {/* Header */}
         <div className="px-6 py-4 flex items-center gap-3"
           style={{ background: 'linear-gradient(135deg, #102a43, #243b53)', borderBottom: '2px solid #b8860b' }}>
           <div className="w-8 h-8 rounded-full shimmer" />
@@ -16,7 +14,6 @@ export default function AnalysisSkeleton() {
           </div>
         </div>
 
-        {/* Thinking indicator */}
         <div className="px-6 py-5">
           <div className="flex items-center gap-3 mb-5">
             <div className="flex gap-1.5">
@@ -43,7 +40,6 @@ export default function AnalysisSkeleton() {
         </div>
       </div>
 
-      {/* Section skeletons */}
       <div className="space-y-3">
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded shimmer" />

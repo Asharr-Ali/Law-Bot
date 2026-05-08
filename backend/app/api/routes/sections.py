@@ -27,8 +27,6 @@ def _dataset(settings: Settings) -> list[dict]:
     return _load_dataset(str(settings.dataset_path))
 
 
-# ── Routes ─────────────────────────────────────────────────────────────────────
-
 @router.get("/sections", response_model=SectionsResponse)
 def get_all_sections(settings: Settings = Depends(get_settings)) -> SectionsResponse:
     """Return every PPC section (useful for a browse / index view)."""

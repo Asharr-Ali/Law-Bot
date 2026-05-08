@@ -173,7 +173,6 @@ export default function AnalysisDisplay({ result }: Props) {
         .law-markdown h2 + * { }
       `}</style>
 
-      {/* ── Main analysis card ── */}
       <div style={{
         borderRadius: '18px',
         overflow: 'hidden',
@@ -182,7 +181,6 @@ export default function AnalysisDisplay({ result }: Props) {
         background: '#fff',
       }}>
 
-        {/* Card header */}
         <div style={{
           background: 'linear-gradient(135deg, #102a43 0%, #1e3a5f 100%)',
           borderBottom: '2px solid #b8860b',
@@ -236,7 +234,6 @@ export default function AnalysisDisplay({ result }: Props) {
           </button>
         </div>
 
-        {/* Markdown body */}
         <div style={{ padding: '22px 24px' }}>
           <div className="law-markdown">
             <ReactMarkdown>{result.analysis}</ReactMarkdown>
@@ -244,7 +241,6 @@ export default function AnalysisDisplay({ result }: Props) {
         </div>
       </div>
 
-      {/* ── Retrieved PPC Sections ── */}
       {result.retrieved_sections && result.retrieved_sections.length > 0 && (
         <div style={{
           borderRadius: '18px',
@@ -253,7 +249,6 @@ export default function AnalysisDisplay({ result }: Props) {
           background: '#fff',
           boxShadow: '0 4px 16px rgba(16,42,67,0.06)',
         }}>
-          {/* Section header */}
           <div style={{
             padding: '13px 20px',
             borderBottom: '1px solid #f0f4f8',
@@ -290,7 +285,6 @@ export default function AnalysisDisplay({ result }: Props) {
             </span>
           </div>
 
-          {/* Section list */}
           <div style={{ padding: '12px 16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {result.retrieved_sections.map((sec, i) => (
               <div
@@ -309,7 +303,6 @@ export default function AnalysisDisplay({ result }: Props) {
                 onMouseLeave={e => (e.currentTarget.style.boxShadow = i === 0 ? '0 3px 12px rgba(184,134,11,0.12)' : 'none')}
               >
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                  {/* Badge */}
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
                     <span style={{
                       fontSize: '11px',
@@ -336,7 +329,6 @@ export default function AnalysisDisplay({ result }: Props) {
                     )}
                   </div>
 
-                  {/* Content */}
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{
                       fontFamily: 'Georgia, serif',

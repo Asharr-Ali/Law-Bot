@@ -48,23 +48,19 @@ export default function SectionCard({ section, showRelevance = false, highlight 
         boxShadow: highlight ? '0 4px 20px rgba(184,134,11,0.15)' : '0 2px 8px rgba(16,42,67,0.06)',
       }}
     >
-      {/* Top bar */}
       <div className="flex items-center justify-between px-4 py-3"
         style={{ borderBottom: `1px solid ${highlight ? '#f9efc4' : '#f0f4f8'}` }}>
         <div className="flex items-center gap-3">
-          {/* Section badge */}
           <div className="rounded-lg px-2.5 py-1 text-white text-xs font-bold"
             style={{ background: 'linear-gradient(135deg, #102a43, #243b53)', fontFamily: 'Georgia, serif' }}>
             § {section.section}
           </div>
 
-          {/* Category tag */}
           <span className="text-xs px-2 py-0.5 rounded-full font-medium"
             style={{ background: `${color}18`, color, border: `1px solid ${color}40` }}>
             {section.category}
           </span>
 
-          {/* Relevance score */}
           {showRelevance && section.relevance !== undefined && (
             <span className="text-xs px-2 py-0.5 rounded-full font-semibold"
               style={{
@@ -81,14 +77,12 @@ export default function SectionCard({ section, showRelevance = false, highlight 
         </div>
       </div>
 
-      {/* Title */}
       <div className="px-4 py-3">
         <h3 className="font-semibold text-sm leading-snug" style={{ color: '#102a43', fontFamily: 'Georgia, serif' }}>
           {section.title}
         </h3>
       </div>
 
-      {/* Expanded description */}
       {expanded && (
         <div className="px-4 pb-4 animate-fade-in">
           <div className="rounded-lg p-3 text-sm leading-relaxed"
