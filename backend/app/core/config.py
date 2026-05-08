@@ -49,6 +49,9 @@ class Settings(BaseSettings):
     # ── Search ────────────────────────────────────────────────────────────────
     search_top_k: int = 6
     search_index_batch_size: int = 100
+    chunk_size_chars: int = 450
+    chunk_overlap_chars: int = 75
+    chunk_summary_sentence_count: int = 2
 
     # ── Upload limits ─────────────────────────────────────────────────────────
     upload_max_bytes: int = 10 * 1024 * 1024  # 10 MB

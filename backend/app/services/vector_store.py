@@ -9,6 +9,7 @@ Responsibilities:
 
 import json
 import logging
+import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -16,6 +17,45 @@ from typing import Any
 from app.core.config import Settings
 
 logger = logging.getLogger(__name__)
+INDEX_SCHEMA_VERSION = "2-summary-augmented-chunks"
+
+
+def _split_sentences(text: str) -> list[str]:
+    normalized = " ".join(text.split())
+    if not normalized:
+        return []
+    sentences = re.split(r"(?<=[.!?])\s+", normalized)
+    return [s.strip() for s in sentences if s.strip()]
+
+
+def _summarize_chunk(text: str, max_sentences: int) -> str:
+    """Lightweight extractive summary that avoids LLM/network dependency at index time."""
+    sentences = _split_sentences(text)
+    if not sentences:
+        return text.strip()
+    return " ".join(sentences[:max_sentences]).strip()
+
+
+def _chunk_text(text: str, chunk_size: int, overlap: int) -> list[str]:
+    normalized = " ".join(text.split())
+    if not normalized:
+        return []
+    if len(normalized) <= chunk_size:
+        return [normalized]
+
+    chunks: list[str] = []
+    start = 0
+    step = max(1, chunk_size - overlap)
+
+    while start < len(normalized):
+        end = min(len(normalized), start + chunk_size)
+        chunk = normalized[start:end].strip()
+        if chunk:
+            chunks.append(chunk)
+        if end >= len(normalized):
+            break
+        start += step
+    return chunks
 
 
 # ── Singleton accessors ────────────────────────────────────────────────────────
@@ -40,22 +80,39 @@ def _get_or_build_collection(settings: Settings):
     try:
         collection = client.get_collection(settings.chroma_collection)
         count = collection.count()
-        logger.info("Loaded existing collection '%s' with %d sections.", settings.chroma_collection, count)
+        metadata = collection.metadata or {}
+        schema_version = metadata.get("schema_version")
+        logger.info(
+            "Loaded existing collection '%s' with %d chunks (schema=%s).",
+            settings.chroma_collection,
+            count,
+            schema_version or "unknown",
+        )
         if count == 0:
             raise ValueError("Collection exists but is empty — rebuilding.")
+        if schema_version != INDEX_SCHEMA_VERSION:
+            raise ValueError("Collection schema changed — rebuilding.")
         return collection
     except Exception:
         logger.info("Building vector index from dataset '%s'…", settings.dataset_path)
-        collection = client.get_or_create_collection(
+        try:
+            client.delete_collection(settings.chroma_collection)
+        except Exception:
+            # Collection may not exist yet; safe to ignore.
+            pass
+        collection = client.create_collection(
             name=settings.chroma_collection,
-            metadata={"hnsw:space": "cosine"},
+            metadata={
+                "hnsw:space": "cosine",
+                "schema_version": INDEX_SCHEMA_VERSION,
+            },
         )
         _populate_index(collection, settings)
         return collection
 
 
 def _populate_index(collection: Any, settings: Settings) -> None:
-    """Embed all PPC sections and upsert them into the collection."""
+    """Embed summary-augmented chunks and upsert them into the collection."""
     embedder = _load_embedder(settings.embedding_model)
 
     with open(settings.dataset_path, "r", encoding="utf-8") as fh:
@@ -64,23 +121,48 @@ def _populate_index(collection: Any, settings: Settings) -> None:
     ids, embeddings, documents, metadatas = [], [], [], []
 
     for law in laws:
-        text = (
-            f"Section {law['section']}: {law['title']}. "
-            f"{law['description']} "
-            f"Keywords: {', '.join(law.get('keywords', []))}"
+        law_code = law.get("law_code", "PPC-1860")
+        section = str(law["section"])
+        title = law["title"]
+        description = law["description"]
+        keywords = law.get("keywords", [])
+        category = law["category"]
+
+        chunks = _chunk_text(
+            description,
+            chunk_size=settings.chunk_size_chars,
+            overlap=settings.chunk_overlap_chars,
         )
-        ids.append(f"ppc-sec-{law['section']}")
-        embeddings.append(embedder.encode(text).tolist())
-        documents.append(text)
-        metadatas.append(
-            {
-                "section": str(law["section"]),
-                "title": law["title"],
-                "category": law["category"],
-                "law_code": law.get("law_code", "PPC-1860"),
-                "description": law["description"][:500],
-            }
-        )
+        if not chunks:
+            continue
+
+        chunk_count = len(chunks)
+        for idx, chunk in enumerate(chunks):
+            summary = _summarize_chunk(chunk, settings.chunk_summary_sentence_count)
+            augmented_text = (
+                f"Law: {law_code}\n"
+                f"Section: {section}\n"
+                f"Title: {title}\n"
+                f"Summary: {summary}\n"
+                f"Keywords: {', '.join(keywords)}\n"
+                f"Chunk: {chunk}"
+            )
+
+            ids.append(f"ppc-sec-{section}-chunk-{idx}")
+            embeddings.append(embedder.encode(augmented_text).tolist())
+            documents.append(augmented_text)
+            metadatas.append(
+                {
+                    "section": section,
+                    "title": title,
+                    "category": category,
+                    "law_code": law_code,
+                    "description": chunk[:500],
+                    "summary": summary[:300],
+                    "chunk_index": idx,
+                    "chunk_count": chunk_count,
+                }
+            )
 
     batch = settings.search_index_batch_size
     for start in range(0, len(ids), batch):
@@ -91,7 +173,7 @@ def _populate_index(collection: Any, settings: Settings) -> None:
             metadatas=metadatas[start : start + batch],
         )
 
-    logger.info("Indexed %d PPC sections.", len(ids))
+    logger.info("Indexed %d summary-augmented chunks.", len(ids))
 
 
 # ── Public API ─────────────────────────────────────────────────────────────────
