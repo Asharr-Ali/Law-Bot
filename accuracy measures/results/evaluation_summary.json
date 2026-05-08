@@ -1,0 +1,595 @@
+{
+  "golden_dataset": "/Users/aliha/Desktop/Law-Bot/accuracy measures/golden_dataset.json",
+  "retrieval_summary": {
+    "n_queries": 15,
+    "retrieval_top_k": 6,
+    "retrieval_precision_macro": 0.4933,
+    "retrieval_recall_macro": 0.6333,
+    "retrieval_f1_macro": 0.6544,
+    "retrieval_mrr": 0.23,
+    "retrieval_hit_rate_at_1": 0.1333,
+    "retrieval_precision_std": 0.123,
+    "retrieval_recall_std": 0.4346
+  },
+  "generation_summary": {
+    "generation_enabled": true,
+    "n_queries": 15,
+    "avg_answer_correctness_proxy": 0.0667,
+    "avg_answer_relevancy_proxy": 1.0,
+    "avg_faithfulness_proxy": 1.0,
+    "avg_answer_section_f1": 0.0667
+  },
+  "generation_rows": [
+    {
+      "id": "Q001",
+      "generated_answer": "## ⚖️ Case Analysis\n\n**Applicable PPC Section(s):** PPC Section 378 (Theft), PPC Section 380 (Theft in dwelling house, etc.), PPC Section 410 (Stolen property)\n\n**Offence Identified:** The crime that has occurred is theft, specifically the theft of a motorcycle from outside a dwelling house. This falls under the category of property offences, where the intention was to take dishonestly a movable property (the motorcycle) without the owner's consent.\n\n## 📋 Legal Guidance\n\n1. **File an FIR (First Information Report)**: Immediately report the incident to the local police station and file an FIR. Provide as much detail as possible, including the time, date, location, and description of the stolen motorcycle.\n2. **Gather Evidence**: Collect any evidence that may be relevant to the case, such as CCTV footage, witness statements, or any other proof that may help identify the perpetrator.\n3. **Obtain a Copy of the FIR**: After filing the FIR, obtain a copy of the report, as this will be necessary for further legal proceedings.\n4. **Cooperate with the Police Investigation**: Assist the police in their investigation by providing any additional information or evidence they may require.\n5. **Consider Private Prosecution**: If the police investigation is slow or ineffective, consider hiring a private lawyer to pursue the case and ensure that the perpetrator is brought to justice.\n\n## ⚠️ Punishment Under PPC\n\nThe punishment for theft under PPC Section 378 is not explicitly stated, but under PPC Section 380 (Theft in dwelling house, etc.), the offender can be punished with imprisonment for a term that may extend to seven years, and shall also be liable to fine. Additionally, if the perpetrator is found to have dishonestly received or retained stolen property (PPC Section 411), they can be punished with imprisonment for a term that may extend to three years, or with fine, or with both.\n\n## 🔔 Important Disclaimer\nThis is preliminary legal information only. Please consult a qualified lawyer before taking any legal action. LawBot does not provide final legal verdicts. It is essential to seek professional legal advice to ensure that your rights are protected and that you receive the best possible outcome in your case.",
+      "expected_answer": "This falls under theft and punishment for theft under PPC sections 378 and 379. File an FIR at the nearest police station with ownership proof and incident details.",
+      "predicted_sections_in_answer": [
+        "378",
+        "380",
+        "410",
+        "411"
+      ],
+      "gold_sections": [
+        "378",
+        "379"
+      ],
+      "answer_correctness_proxy": 0.3333,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.3333,
+      "section_precision_from_answer": 0.25,
+      "section_recall_from_answer": 0.5
+    },
+    {
+      "id": "Q002",
+      "generated_answer": "## ⚖️ Case Analysis\n\n**Applicable PPC Section(s):** PPC Section 382 (Theft after preparation made for causing death, hurt or restraint in order to the committing of the theft), PPC Section 350 (Criminal force), PPC Section 378 (Theft)\n\n**Offence Identified:** The offence identified in this case is theft committed by a group of armed men who used force to stop and rob the victims of their cash and phones. This act involves the use of criminal force to commit theft, which is a serious offence under the Pakistan Penal Code.\n\n## 📋 Legal Guidance\n\n1. **File an FIR**: The first step is to file a First Information Report (FIR) at the nearest police station, providing as much detail as possible about the incident, including the time, location, and description of the perpetrators.\n2. **Provide Evidence**: Gather any evidence that may be relevant to the case, such as witness statements, medical reports (if anyone was injured), and any video or photographic evidence.\n3. **Cooperate with the Police**: Cooperate fully with the police during their investigation, providing any additional information they may request.\n4. **Seek Legal Representation**: Consider seeking the advice of a qualified lawyer who can guide you through the legal process and represent you in court if necessary.\n5. **Follow Court Procedure**: If the case goes to court, be prepared to testify and follow the court's procedure for presenting evidence and arguing the case.\n\n## ⚠️ Punishment Under PPC\n\nUnder PPC Section 382, the punishment for theft after preparation made for causing death, hurt, or restraint can extend to ten years of rigorous imprisonment. Additionally, PPC Section 350 (Criminal force) and PPC Section 378 (Theft) may also apply, with punishments varying according to the specifics of the case.\n\n## 🔔 Important Disclaimer\nThis is preliminary legal information only. Please consult a qualified lawyer before taking any legal action. LawBot does not provide final legal verdicts.",
+      "expected_answer": "This is robbery, and if five or more persons acted together it may amount to dacoity. Relevant sections include 390, 391 and punishment under 392.",
+      "predicted_sections_in_answer": [
+        "350",
+        "378",
+        "382"
+      ],
+      "gold_sections": [
+        "390",
+        "391",
+        "392"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q003",
+      "generated_answer": "## ⚖️ Case Analysis\n\n**Applicable PPC Section(s):** PPC Section 503 (Criminal Intimidation), PPC Section 94 (Act to which a person is compelled by threats)\n\n**Offence Identified:** The offence identified in this case is criminal intimidation, where the perpetrator has threatened to kill the victim if they testify in court. This threat is intended to cause alarm and prevent the victim from performing a legal duty.\n\n## 📋 Legal Guidance\n\n1. **File an FIR**: The victim should immediately file a First Information Report (FIR) with the local police station, providing as much detail as possible about the threat, including the date, time, location, and any witnesses.\n2. **Gather Evidence**: The victim should collect any evidence related to the threat, such as text messages, voice recordings, or witness statements, to support their case.\n3. **Seek Protection**: The victim may request protection from the police or court, especially if they feel that their life is in danger.\n4. **Testify in Court**: Despite the threat, the victim should still testify in court, as it is their legal duty to do so. The court and police can provide necessary protection and support.\n5. **Cooperate with Investigation**: The victim should cooperate fully with the police investigation and provide any additional information or evidence requested.\n\n## ⚠️ Punishment Under PPC\n\nUnder PPC Section 503 (Criminal Intimidation), the perpetrator can be punished with imprisonment of either description for a term which may extend to two years, or with fine, or with both.\n\n## 🔔 Important Disclaimer\nThis is preliminary legal information only. Please consult a qualified lawyer before taking any legal action. LawBot does not provide final legal verdicts.",
+      "expected_answer": "This is criminal intimidation. Relevant section is PPC 506 and you should report threats immediately with evidence such as messages or recordings.",
+      "predicted_sections_in_answer": [
+        "506",
+        "94"
+      ],
+      "gold_sections": [
+        "506"
+      ],
+      "answer_correctness_proxy": 0.7,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q004",
+      "generated_answer": "## ⚖️ Case Analysis\n\n**Applicable PPC Section(s):** PPC Section 415 (Cheating), PPC Section 405 (Criminal breach of trust), PPC Section 464 (Making a false document)\n\n**Offence Identified:** The offence that has occurred is cheating and criminal breach of trust, where the person has dishonestly induced you to invest money by making false promises of investment returns, thereby causing financial harm to you.\n\n## 📋 Legal Guidance\n\n1. **File an FIR**: Report the incident to the police and file a First Information Report (FIR) against the person who cheated you, providing as much detail as possible about the incident, including the amount of money involved and any evidence you may have.\n2. **Gather evidence**: Collect any documents, emails, or other communication that may serve as evidence of the false promises made by the person, including any receipts or records of the money transferred.\n3. **Consult a lawyer**: Engage a qualified lawyer who can guide you through the legal process and help you build a strong case against the accused.\n4. **Court procedure**: Your lawyer will help you understand the court procedure and ensure that you follow the necessary steps to pursue your case, including filing a complaint and attending court hearings.\n5. **Preserve records**: Keep all records and evidence safe, as they will be crucial in proving your case in court.\n\n## ⚠️ Punishment Under PPC\n\nThe punishment for cheating under PPC Section 415 can range from imprisonment for a term of up to 3 years, or with fine, or with both. For criminal breach of trust under PPC Section 405, the punishment can range from imprisonment for a term of up to 3 years, or with fine, or with both. Additionally, if the accused is found guilty of making a false document under PPC Section 464, they can face imprisonment for a term of up to 3 years, or with fine, or with both.\n\n## 🔔 Important Disclaimer\nThis is preliminary legal information only. Please consult a qualified lawyer before taking any legal action. LawBot does not provide final legal verdicts. It is essential to seek professional legal advice to ensure that your rights are protected and that you receive the best possible outcome in your case.",
+      "expected_answer": "This is cheating and dishonest inducement under PPC 420. Preserve transaction records and complaint evidence for FIR registration.",
+      "predicted_sections_in_answer": [
+        "405",
+        "415",
+        "464"
+      ],
+      "gold_sections": [
+        "420"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q005",
+      "generated_answer": "## ⚖️ Case Analysis\n\n**Applicable PPC Section(s):** PPC Section 431 (Mischief by injury to public road, bridge, river or channel), PPC Section 432 (Mischief by causing inundation or obstruction to public drainage attended with damage), PPC Section 44 (Injury)\n\n**Offence Identified:** The intentional damage to your land boundary wall by a neighbor falls under the category of mischief, which is a form of property offence. This act has caused harm to your property, and it is considered an illegal act under the Pakistan Penal Code.\n\n## 📋 Legal Guidance\n\n1. **File an FIR**: Immediately report the incident to the local police station and file a First Information Report (FIR) against your neighbor, providing as much detail as possible about the incident, including the date, time, and extent of the damage.\n2. **Gather Evidence**: Collect evidence of the damage, such as photographs, videos, or witness statements, to support your claim. This evidence will be crucial in building a strong case against your neighbor.\n3. **Notify Local Authorities**: Inform your local council or municipal authorities about the damage, as they may be able to provide assistance or support in repairing the boundary wall.\n4. **Seek Legal Counsel**: Consult a qualified lawyer who can guide you through the legal process and help you understand your rights and options.\n5. **Court Procedure**: If the case goes to court, be prepared to provide testimony and evidence to support your claim. Your lawyer will help you navigate the court procedure and ensure that your rights are protected.\n\n## ⚠️ Punishment Under PPC\n\nThe punishment for mischief under PPC Section 431 and PPC Section 432 can range from imprisonment for up to five years, or a fine, or both. The specific punishment will depend on the severity of the damage and the circumstances of the case.\n\n## 🔔 Important Disclaimer\nThis is preliminary legal information only. Please consult a qualified lawyer before taking any legal action. LawBot does not provide final legal verdicts. It is essential to seek professional legal advice to ensure that your rights are protected and that you receive the best possible outcome in your case.",
+      "expected_answer": "Intentional property damage is mischief under PPC 425. Gather photos and witness details and report through police complaint or legal notice.",
+      "predicted_sections_in_answer": [
+        "431",
+        "432",
+        "44"
+      ],
+      "gold_sections": [
+        "425"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q006",
+      "generated_answer": "## ⚖️ Case Analysis\n\n**Applicable PPC Section(s):** PPC Section 441 (Criminal trespass), PPC Section 445 (House-breaking)\n\n**Offence Identified:** The person has committed an offence of criminal trespass by entering the house compound without permission and refusing to leave. This act falls under the category of property offences, where an individual intentionally enters or remains on someone else's property without consent, with the intent to commit an offence or intimidate, insult, or annoy the person in possession of the property.\n\n## 📋 Legal Guidance\n\n1. **File an FIR**: The first step is to file a First Information Report (FIR) at the local police station, providing as much detail as possible about the incident, including the date, time, and description of the person who entered the house compound.\n2. **Gather Evidence**: Collect any evidence that may support the claim, such as witness statements, photographs, or video footage, if available.\n3. **Cooperate with the Police**: Cooperate with the police during their investigation and provide any additional information they may require.\n4. **Consider a Civil Lawsuit**: Depending on the circumstances, it may be possible to file a civil lawsuit against the person for trespassing and any resulting damages.\n5. **Seek Legal Counsel**: Consult a qualified lawyer to guide through the legal process and ensure that the rights are protected.\n\n## ⚠️ Punishment Under PPC\n\nThe punishment for criminal trespass under PPC Section 441 can vary depending on the circumstances, but it may include imprisonment for up to three years, a fine, or both. If the trespass is considered house-breaking under PPC Section 445, the punishment can be more severe, with imprisonment for up to seven years, a fine, or both.\n\n## 🔔 Important Disclaimer\nThis is preliminary legal information only. Please consult a qualified lawyer before taking any legal action. LawBot does not provide final legal verdicts. It is essential to seek professional legal advice to ensure that the rights are protected and the best possible outcome is achieved.",
+      "expected_answer": "Unauthorized entry can constitute criminal trespass under PPC 441. Document the incident and seek immediate local police intervention.",
+      "predicted_sections_in_answer": [
+        "441",
+        "445"
+      ],
+      "gold_sections": [
+        "441"
+      ],
+      "answer_correctness_proxy": 0.6667,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.6667,
+      "section_precision_from_answer": 0.5,
+      "section_recall_from_answer": 1.0
+    },
+    {
+      "id": "Q007",
+      "generated_answer": "## ⚖️ Case Analysis\n\nI've retrieved the most relevant PPC sections for your case (see below). However, a full AI-generated analysis requires a live LLM.\n\n**To enable AI analysis, set up one of:**\n- **Groq** (free tier): https://console.groq.com → set `GROQ_API_KEY` in `.env`\n- **Ollama** (local, free): https://ollama.com → `ollama pull llama3.2`\n\n## 🔔 Important Disclaimer\nPlease consult a qualified lawyer (وکیل) before taking any legal action.",
+      "expected_answer": "Publishing false statements that harm reputation is defamation under PPC 499. Preserve screenshots and metadata for legal action.",
+      "predicted_sections_in_answer": [],
+      "gold_sections": [
+        "499"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q008",
+      "generated_answer": "## ⚖️ Case Analysis\n\nI've retrieved the most relevant PPC sections for your case (see below). However, a full AI-generated analysis requires a live LLM.\n\n**To enable AI analysis, set up one of:**\n- **Groq** (free tier): https://console.groq.com → set `GROQ_API_KEY` in `.env`\n- **Ollama** (local, free): https://ollama.com → `ollama pull llama3.2`\n\n## 🔔 Important Disclaimer\nPlease consult a qualified lawyer (وکیل) before taking any legal action.",
+      "expected_answer": "This may involve unlawful assembly and group liability under PPC 141 and 149, depending on common object and acts committed.",
+      "predicted_sections_in_answer": [],
+      "gold_sections": [
+        "141",
+        "149"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q009",
+      "generated_answer": "## ⚖️ Case Analysis\n\nI've retrieved the most relevant PPC sections for your case (see below). However, a full AI-generated analysis requires a live LLM.\n\n**To enable AI analysis, set up one of:**\n- **Groq** (free tier): https://console.groq.com → set `GROQ_API_KEY` in `.env`\n- **Ollama** (local, free): https://ollama.com → `ollama pull llama3.2`\n\n## 🔔 Important Disclaimer\nPlease consult a qualified lawyer (وکیل) before taking any legal action.",
+      "expected_answer": "This points to kidnapping/abduction and wrongful confinement under PPC 365 and 368. Urgent police reporting and tracing is required.",
+      "predicted_sections_in_answer": [],
+      "gold_sections": [
+        "365",
+        "368"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q010",
+      "generated_answer": "## ⚖️ Case Analysis\n\nI've retrieved the most relevant PPC sections for your case (see below). However, a full AI-generated analysis requires a live LLM.\n\n**To enable AI analysis, set up one of:**\n- **Groq** (free tier): https://console.groq.com → set `GROQ_API_KEY` in `.env`\n- **Ollama** (local, free): https://ollama.com → `ollama pull llama3.2`\n\n## 🔔 Important Disclaimer\nPlease consult a qualified lawyer (وکیل) before taking any legal action.",
+      "expected_answer": "Kidnapping or abducting a woman to compel marriage is covered by PPC 366. Immediate protective and criminal proceedings should be initiated.",
+      "predicted_sections_in_answer": [],
+      "gold_sections": [
+        "366"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q011",
+      "generated_answer": "## ⚖️ Case Analysis\n\nI've retrieved the most relevant PPC sections for your case (see below). However, a full AI-generated analysis requires a live LLM.\n\n**To enable AI analysis, set up one of:**\n- **Groq** (free tier): https://console.groq.com → set `GROQ_API_KEY` in `.env`\n- **Ollama** (local, free): https://ollama.com → `ollama pull llama3.2`\n\n## 🔔 Important Disclaimer\nPlease consult a qualified lawyer (وکیل) before taking any legal action.",
+      "expected_answer": "Outraging modesty and insulting modesty are addressed under PPC 354 and 509. Witness statements and location details are important.",
+      "predicted_sections_in_answer": [],
+      "gold_sections": [
+        "354",
+        "509"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q012",
+      "generated_answer": "## ⚖️ Case Analysis\n\nI've retrieved the most relevant PPC sections for your case (see below). However, a full AI-generated analysis requires a live LLM.\n\n**To enable AI analysis, set up one of:**\n- **Groq** (free tier): https://console.groq.com → set `GROQ_API_KEY` in `.env`\n- **Ollama** (local, free): https://ollama.com → `ollama pull llama3.2`\n\n## 🔔 Important Disclaimer\nPlease consult a qualified lawyer (وکیل) before taking any legal action.",
+      "expected_answer": "Punishment for rape is provided under PPC 376. The victim should seek immediate medical and forensic examination and register FIR promptly.",
+      "predicted_sections_in_answer": [],
+      "gold_sections": [
+        "376"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q013",
+      "generated_answer": "## ⚖️ Case Analysis\n\n**Applicable PPC Section(s):** PPC Section 397 (Robbery or dacoity, with attempt to cause death or grievous hurt), PPC Section 398 (Attempt to commit robbery or dacoity when armed with deadly weapon)\n\n**Offence Identified:** The offence identified in this case is an attempt to murder another person with a firearm, which falls under the category of violent crimes. Although the victim survived, the use of a deadly weapon (firearm) and the intent to cause death or grievous hurt are key factors in determining the severity of the offence.\n\n## 📋 Legal Guidance\n\n1. **FIR Filing:** The victim or their family should immediately file a First Information Report (FIR) at the nearest police station, providing as much detail as possible about the incident, including the use of a firearm.\n2. **Medical Evidence:** Ensure that the victim receives immediate medical attention, and all medical records and reports are preserved as evidence.\n3. **Witness Statements:** Identify and record statements from any witnesses to the incident, as their testimony can be crucial in building a strong case.\n4. **Police Investigation:** Cooperate fully with the police investigation, providing any additional information or evidence requested.\n5. **Court Procedure:** Once the investigation is complete, the case will proceed to court. It is essential to engage a qualified lawyer to represent the victim's interests and navigate the legal process.\n\n## ⚠️ Punishment Under PPC\n\nThe punishment for such an offence can be severe. According to PPC Section 397, if the offender uses any deadly weapon or causes grievous hurt to any person or attempts to cause death or grievous hurt, the imprisonment shall not be less than seven years. PPC Section 398 also stipulates a minimum of seven years' imprisonment for attempting to commit robbery or dacoity when armed with a deadly weapon.\n\n## 🔔 Important Disclaimer\nThis is preliminary legal information only. Please consult a qualified lawyer before taking any legal action. LawBot does not provide final legal verdicts. It is crucial to seek professional legal advice to understand the specific circumstances of the case and the best course of action.",
+      "expected_answer": "Attempt to commit qatl-i-amd applies under PPC 324. Weapon evidence, medical records and eyewitness testimony are critical.",
+      "predicted_sections_in_answer": [
+        "397",
+        "398"
+      ],
+      "gold_sections": [
+        "324"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q014",
+      "generated_answer": "## ⚖️ Case Analysis\n\nI've retrieved the most relevant PPC sections for your case (see below). However, a full AI-generated analysis requires a live LLM.\n\n**To enable AI analysis, set up one of:**\n- **Groq** (free tier): https://console.groq.com → set `GROQ_API_KEY` in `.env`\n- **Ollama** (local, free): https://ollama.com → `ollama pull llama3.2`\n\n## 🔔 Important Disclaimer\nPlease consult a qualified lawyer (وکیل) before taking any legal action.",
+      "expected_answer": "Intentional killing is qatl-i-amd under PPC 300 with punishment provisions under PPC 302.",
+      "predicted_sections_in_answer": [],
+      "gold_sections": [
+        "300",
+        "302"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    },
+    {
+      "id": "Q015",
+      "generated_answer": "## ⚖️ Case Analysis\n\nI've retrieved the most relevant PPC sections for your case (see below). However, a full AI-generated analysis requires a live LLM.\n\n**To enable AI analysis, set up one of:**\n- **Groq** (free tier): https://console.groq.com → set `GROQ_API_KEY` in `.env`\n- **Ollama** (local, free): https://ollama.com → `ollama pull llama3.2`\n\n## 🔔 Important Disclaimer\nPlease consult a qualified lawyer (وکیل) before taking any legal action.",
+      "expected_answer": "Common intention may trigger joint liability under PPC 34 in addition to primary offence sections such as theft or robbery.",
+      "predicted_sections_in_answer": [],
+      "gold_sections": [
+        "34",
+        "390",
+        "392"
+      ],
+      "answer_correctness_proxy": 0.0,
+      "answer_relevancy_proxy": 1.0,
+      "faithfulness_proxy": 1.0,
+      "section_f1_from_answer": 0.0,
+      "section_precision_from_answer": 0.0,
+      "section_recall_from_answer": 0.0
+    }
+  ],
+  "retrieval_rows": [
+    {
+      "id": "Q001",
+      "query": "My motorcycle was stolen from outside my house at night. Which PPC section applies and what legal step should I take?",
+      "gold_sections": [
+        "378",
+        "379"
+      ],
+      "retrieved_ranked_sections": [
+        "410",
+        "378",
+        "380",
+        "97",
+        "356",
+        "411"
+      ],
+      "retrieval_precision": 0.1667,
+      "retrieval_recall": 0.5,
+      "retrieval_f1": 0.25,
+      "reciprocal_rank": 0.5,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q002",
+      "query": "A group of armed men stopped us on the highway and took cash and phones by force.",
+      "gold_sections": [
+        "390",
+        "391",
+        "392"
+      ],
+      "retrieved_ranked_sections": [
+        "382",
+        "350",
+        "378",
+        "158",
+        "349",
+        "158"
+      ],
+      "retrieval_precision": 0.0,
+      "retrieval_recall": 0.0,
+      "retrieval_f1": 0.0,
+      "reciprocal_rank": 0.0,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q003",
+      "query": "Someone threatened to kill me if I testified in court.",
+      "gold_sections": [
+        "506"
+      ],
+      "retrieved_ranked_sections": [
+        "94",
+        "87",
+        "503",
+        "100",
+        "211",
+        "106"
+      ],
+      "retrieval_precision": 0.0,
+      "retrieval_recall": 0.0,
+      "retrieval_f1": 0.0,
+      "reciprocal_rank": 0.0,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q004",
+      "query": "A person forged trust and took money from me by false promises of investment returns.",
+      "gold_sections": [
+        "420"
+      ],
+      "retrieved_ranked_sections": [
+        "415",
+        "25",
+        "405",
+        "416",
+        "404",
+        "464"
+      ],
+      "retrieval_precision": 0.0,
+      "retrieval_recall": 0.0,
+      "retrieval_f1": 0.0,
+      "reciprocal_rank": 0.0,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q005",
+      "query": "My land boundary wall was intentionally damaged by a neighbor.",
+      "gold_sections": [
+        "425"
+      ],
+      "retrieved_ranked_sections": [
+        "432",
+        "431",
+        "288",
+        "452",
+        "103",
+        "44"
+      ],
+      "retrieval_precision": 0.0,
+      "retrieval_recall": 0.0,
+      "retrieval_f1": 0.0,
+      "reciprocal_rank": 0.0,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q006",
+      "query": "A person entered my house compound without permission and refused to leave.",
+      "gold_sections": [
+        "441"
+      ],
+      "retrieved_ranked_sections": [
+        "445",
+        "445",
+        "380",
+        "452",
+        "441",
+        "378"
+      ],
+      "retrieval_precision": 0.2,
+      "retrieval_recall": 1.0,
+      "retrieval_f1": 0.3333,
+      "reciprocal_rank": 0.2,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q007",
+      "query": "Someone posted false allegations online harming my reputation.",
+      "gold_sections": [
+        "499"
+      ],
+      "retrieved_ranked_sections": [
+        "209",
+        "415",
+        "415",
+        "499",
+        "211",
+        "418"
+      ],
+      "retrieval_precision": 0.2,
+      "retrieval_recall": 1.0,
+      "retrieval_f1": 0.3333,
+      "reciprocal_rank": 0.25,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q008",
+      "query": "A crowd gathered with weapons and attacked shops in my area.",
+      "gold_sections": [
+        "141",
+        "149"
+      ],
+      "retrieved_ranked_sections": [
+        "158",
+        "503",
+        "146",
+        "326",
+        "351",
+        "358"
+      ],
+      "retrieval_precision": 0.0,
+      "retrieval_recall": 0.0,
+      "retrieval_f1": 0.0,
+      "reciprocal_rank": 0.0,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q009",
+      "query": "My relative was abducted and secretly confined in another city.",
+      "gold_sections": [
+        "365",
+        "368"
+      ],
+      "retrieved_ranked_sections": [
+        "368",
+        "365",
+        "362",
+        "367",
+        "361",
+        "369"
+      ],
+      "retrieval_precision": 0.3333,
+      "retrieval_recall": 1.0,
+      "retrieval_f1": 0.5,
+      "reciprocal_rank": 1.0,
+      "top1_hit": 1
+    },
+    {
+      "id": "Q010",
+      "query": "A woman is being forced into marriage after abduction.",
+      "gold_sections": [
+        "366"
+      ],
+      "retrieved_ranked_sections": [
+        "362",
+        "498",
+        "365",
+        "495",
+        "494",
+        "496"
+      ],
+      "retrieval_precision": 0.0,
+      "retrieval_recall": 0.0,
+      "retrieval_f1": 0.0,
+      "reciprocal_rank": 0.0,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q011",
+      "query": "A man used criminal force and obscene words to insult a woman's modesty in public.",
+      "gold_sections": [
+        "354",
+        "509"
+      ],
+      "retrieved_ranked_sections": [
+        "509",
+        "354",
+        "504",
+        "294",
+        "152",
+        "350"
+      ],
+      "retrieval_precision": 0.3333,
+      "retrieval_recall": 1.0,
+      "retrieval_f1": 0.5,
+      "reciprocal_rank": 1.0,
+      "top1_hit": 1
+    },
+    {
+      "id": "Q012",
+      "query": "An adult woman reported non-consensual sexual assault.",
+      "gold_sections": [
+        "376"
+      ],
+      "retrieved_ranked_sections": [
+        "354",
+        "452",
+        "458",
+        "509",
+        "498",
+        "87"
+      ],
+      "retrieval_precision": 0.0,
+      "retrieval_recall": 0.0,
+      "retrieval_f1": 0.0,
+      "reciprocal_rank": 0.0,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q013",
+      "query": "A person attempted to murder another with a firearm but the victim survived.",
+      "gold_sections": [
+        "324"
+      ],
+      "retrieved_ranked_sections": [
+        "89",
+        "397",
+        "94",
+        "94",
+        "225",
+        "398"
+      ],
+      "retrieval_precision": 0.0,
+      "retrieval_recall": 0.0,
+      "retrieval_f1": 0.0,
+      "reciprocal_rank": 0.0,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q014",
+      "query": "A deliberate fatal attack resulted in death.",
+      "gold_sections": [
+        "300",
+        "302"
+      ],
+      "retrieved_ranked_sections": [
+        "46",
+        "300",
+        "158",
+        "94",
+        "315",
+        "100"
+      ],
+      "retrieval_precision": 0.1667,
+      "retrieval_recall": 0.5,
+      "retrieval_f1": 0.25,
+      "reciprocal_rank": 0.5,
+      "top1_hit": 0
+    },
+    {
+      "id": "Q015",
+      "query": "Two men jointly planned and executed a violent theft.",
+      "gold_sections": [
+        "34",
+        "390",
+        "392"
+      ],
+      "retrieved_ranked_sections": [
+        "356",
+        "382",
+        "379",
+        "382",
+        "378",
+        "158"
+      ],
+      "retrieval_precision": 0.0,
+      "retrieval_recall": 0.0,
+      "retrieval_f1": 0.0,
+      "reciprocal_rank": 0.0,
+      "top1_hit": 0
+    }
+  ]
+}

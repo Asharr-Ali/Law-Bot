@@ -294,7 +294,7 @@ export default function AnalysisDisplay({ result }: Props) {
           <div style={{ padding: '12px 16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {result.retrieved_sections.map((sec, i) => (
               <div
-                key={sec.section ?? i}
+                key={`${sec.section ?? 'section'}-${sec.title ?? 'untitled'}-${i}`}
                 style={{
                   borderRadius: '12px',
                   border: `1.5px solid ${i === 0 ? '#f0c040' : '#e2e8f0'}`,

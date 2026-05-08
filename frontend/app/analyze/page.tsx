@@ -212,8 +212,8 @@ export default function AnalyzePage() {
 
         {/* Disclaimer footer */}
         <div className="mt-8 p-4 rounded-xl text-center text-xs"
-          style={{ background: '#fff8e1', border: '1px solid #f9efc4', color: '#9a700a' }}>
-          ⚖️ <strong>Disclaimer:</strong> LawBot provides educational legal information only. Always consult a qualified
+          style={{ background: 'rgb(145, 52, 15)', border: '1px solidrgb(145, 52, 15)', color: 'white' }}>
+<strong>Disclaimer:</strong> LawBot provides educational legal information only. Always consult a qualified
           Pakistani lawyer (وکیل) before taking legal action. This is not a substitute for professional legal advice.
         </div>
       </div>
